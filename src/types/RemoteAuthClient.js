@@ -120,7 +120,7 @@ class RemoteAuthClient extends EventEmitter {
           const decryptedToken = this.decryptPayload(data.encrypted_token).toString()
           this.emit('finish', decryptedToken)
         }).catch(e =>{
-          if(this.debug) this.log(red('Failed to get token from remote auth', e.toString()))
+          if(this.debug) this.log(red('Failed to get token from remote auth: ' + e.toString()))
         })
         // this.emit('finish', decryptedToken)
       break
